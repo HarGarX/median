@@ -5,8 +5,8 @@ services:
     image: postgres:15.4
     restart: always
     environment:
-      - POSTGRES_USER=median
-      - POSTGRES_PASSWORD=median
+      - POSTGRES_USER=env("DATABASE_USER")
+      - POSTGRES_PASSWORD=env("DATABASE_PASSWORD")
     volumes:
       - postgres:/var/lib/postgresql/data
     ports:
